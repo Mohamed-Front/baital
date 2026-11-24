@@ -1,0 +1,24 @@
+{
+  "name": "bait-al-salam",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@primeuix/themes": "latest",
+    "@tailwindcss/vite": "latest",
+    "primeicons": "latest",
+    "primevue": "latest",
+    "tailwindcss": "latest",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "latest",
+    "vite": "latest"
+  }
+}

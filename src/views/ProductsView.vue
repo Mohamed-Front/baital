@@ -1,0 +1,17 @@
+<script setup>
+import PageHero from '../components/PageHero.vue'
+import { products, wa } from '../data/site'
+</script>
+<template>
+  <PageHero title="Our Products" text="We provide a range of services to our customers, including decorative laminated sheets, PVC edge banding, PVC vinyl flooring, tiles and skirting, MDF & plywood, acrylic solid surface and more." />
+  <section class="mx-auto grid max-w-7xl gap-8 px-5 py-20 sm:grid-cols-2 lg:grid-cols-3">
+    <article v-for="p in products" :key="p.name" class="group overflow-hidden rounded-2xl bg-white ring-1 ring-sand">
+      <div class="aspect-[4/3] overflow-hidden"><img :src="p.img" :alt="p.name" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" /></div>
+      <div class="flex items-center justify-between gap-3 p-5">
+        <h2 class="text-xl font-bold text-petrol">{{ p.name }}</h2>
+        <a :href="wa(`Hello, I would like to ask about: ${p.name}`)" target="_blank" rel="noopener" aria-label="Ask on WhatsApp"
+           class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#1fa855] text-white hover:bg-[#178a45]"><i class="pi pi-whatsapp"></i></a>
+      </div>
+    </article>
+  </section>
+</template>

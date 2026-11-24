@@ -1,0 +1,15 @@
+@layer theme, base, primevue;
+@import "tailwindcss";
+@theme {
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-sans: 'Hanken Grotesk', sans-serif;
+  --color-petrol: #0F3A45;
+  --color-ink: #14201f;
+  --color-sand: #E8E3D8;
+  --color-bone: #F7F6F3;
+  --color-brass: #C69A4B;
+}
+html { scroll-behavior: smooth; }
+body { @apply bg-bone text-ink font-sans antialiased; }
+h1, h2, h3 { @apply font-display tracking-tight; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
