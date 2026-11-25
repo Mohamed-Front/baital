@@ -1,8 +1,5 @@
 <script setup>
 import { reactive } from 'vue'
-import InputText from 'primevue/inputtext'
-import Textarea from 'primevue/textarea'
-import Button from 'primevue/button'
 import PageHero from '../components/PageHero.vue'
 import { company, wa } from '../data/site'
 
@@ -25,13 +22,15 @@ function send() {
       <li class="flex gap-4"><i class="pi pi-mobile mt-1 text-xl text-brass"></i><a :href="`tel:${company.phone}`">{{ company.phone }}</a></li>
     </ul>
     <form class="grid gap-4 rounded-3xl bg-white p-6 ring-1 ring-sand sm:grid-cols-2 md:col-span-3 md:p-10" @submit.prevent="send">
-      <InputText v-model="f.first" placeholder="First Name" required fluid />
-      <InputText v-model="f.last" placeholder="Last Name" fluid />
-      <InputText v-model="f.email" type="email" placeholder="Email" fluid />
-      <InputText v-model="f.phone" type="tel" placeholder="Phone" fluid />
-      <InputText v-model="f.address" placeholder="Address" class="sm:col-span-2" fluid />
-      <Textarea v-model="f.message" rows="5" placeholder="Your message" required class="sm:col-span-2" fluid />
-      <Button type="submit" label="Send on WhatsApp" icon="pi pi-whatsapp" class="sm:col-span-2" size="large" />
+      <input v-model="f.first" class="w-full rounded-lg border border-sand px-4 py-3 outline-none focus:border-petrol" placeholder="First Name" required />
+      <input v-model="f.last" class="w-full rounded-lg border border-sand px-4 py-3 outline-none focus:border-petrol" placeholder="Last Name" />
+      <input v-model="f.email" type="email" class="w-full rounded-lg border border-sand px-4 py-3 outline-none focus:border-petrol" placeholder="Email" />
+      <input v-model="f.phone" type="tel" class="w-full rounded-lg border border-sand px-4 py-3 outline-none focus:border-petrol" placeholder="Phone" />
+      <input v-model="f.address" class="w-full rounded-lg border border-sand px-4 py-3 outline-none focus:border-petrol sm:col-span-2" placeholder="Address" />
+      <textarea v-model="f.message" rows="5" class="w-full rounded-lg border border-sand px-4 py-3 outline-none focus:border-petrol sm:col-span-2" placeholder="Your message" required></textarea>
+      <button type="submit" class="rounded-lg bg-petrol px-5 py-3.5 font-semibold text-white transition hover:bg-ink sm:col-span-2">
+        <i class="pi pi-whatsapp mr-2"></i>Send on WhatsApp
+      </button>
     </form>
   </section>
 </template>
